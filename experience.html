@@ -1,0 +1,234 @@
+<html>
+<head>
+<title>EXPERIENCE</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Monoserif;
+  padding: 20px;
+  font-color: white;
+}
+
+p{
+color: black;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: none;
+  font-size: 40px;
+  text-align: center;
+  
+  
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+<div class="hero">
+<div class="navbar">
+<img src="womanface.png">
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="biodata.html">BIODATA</a></li>
+<li><a href="education.html">EDUCATION</a></li>
+<li><a href="experience.html">EXPERIENCE</a></li>
+<li><a href="family.html">FAMILY</a></li>
+<li><a href="gallery.html">GALLERY</a></li>
+</ul>
+</header>
+<br>
+<br>
+<br>
+<div class="header">
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>LIFE EXPERIENCE</h2>
+      <h5>My hiking experience, July 21, 2021</h5>
+<br>
+      <div class="fakeimg" style="height:200px;">
+<center><img src="topm.jpg"></center>
+</div>
+<br>
+<br>
+<br>
+      <p>It was a memorible expeience...</p>
+      <p>Back in early july 2021, I went to trekking with my sister and cousin in penang Island. The trekking was an amazing but exhausting experience. We trekked through beautiful  villages, farm terraces, river streams, forests, and suspension bridges. Jaw-dropping views. As we ascended, the forest was sheltered with rows and rows of trees. The air became thinner and everyone was gasping for breath. We quickly learnt to pace our walks. I still cn't remember, by the time we reached our house, everyone was dog-tired because of the 3 hours of trekking. It was physically exhausting and muscle numbing.Amazingly, none of us hated the journey. On the contrary, we laughed a lot about our trekking experience every day.Personally, the trip made me learn to be comfortable with the uncomfortable. The journey made me appreciate the nature more, made me realise the importance to stop taking things for granted, stop complaining the inadequacy, and be flexible in working things out.My favourite life lesson gained from this adventure is, Be comfortable with the uncomfortable. It is perfectly okay. That is all about my trekking experience.</p>
+    </div>
+    <div class="card">
+      <h2>EMBARASSING EXPERIENCE</h2>
+      <h5>Sep 2, 2017</h5>
+<br>
+      <div class="fakeimg" >
+         <img src="bruh.png">
+      </div>
+<br>
+      <p>Never forget..</p>
+      <p>I was at a coffee shop and had a cup of coffee sitting in front of me that was completely filled to the top. I raised my hand to get the waitress's attention because I wanted to order something else, and I accidentally whacked the shit out of the glass, which sent it flying across the room. It then proceeded to hit the waitress on the thigh and spill coffee everywhere. I felt bad, so I left and never went back."</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>QUOTES OF THE DAY</h2>
+      <div class="fakeimg" style="height:2x;">
+<center><img src="quotes.jpg"></center>
+</div>
+      <p><b>WE GO THROUGH WHAT WE GO TROUGH</b></p>
+    </div>
+    <div class="card">
+      <h3>MEMORIES CLOCK</h3>
+<p> Times will never stop counting but memories stay </p>
+<canvas id="canvas" width="200" height="200"
+style="background-color:none" float="right">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+      
+
+</body>
+</html>
+
+
+
+
+
